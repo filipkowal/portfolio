@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filip Kowal - Software Developer</title>
+    <style>
+      body {
+        font-family: monospace, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: black;
+        color: #fff;
+      }
+      .container {
+        max-width: 800px;
+        margin: 20vh auto;
+        padding: 20px;
+        background-color: #0e0e0e05;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1,
+      h2,
+      h3 {
+        color: #2c3e50;
+      }
+      p {
+        line-height: 1.6;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      ul li {
+        margin: 5px 0;
+      }
+      .section {
+        margin-bottom: 20px;
+      }
+      .avatar {
+        border-radius: 50%;
+      }
+      .tooltip {
+        cursor: pointer;
+      }
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <img src="./avatar.jpeg" alt="Filip Kowal's face" class="avatar" />
+        <h1>Filip Kowal • Software Developer</h1>
+      </header>
+      <section>
+        <p>
+          Hi 👋, I'm a front-end web developer passionate about simplifying
+          complex problems. My expertise extends beyond the typical front-end
+          scope, allowing me to innovate and explore new solutions.
+        </p>
+        <p>
+          I am open to cooperation with clients across
+          <b
+            class="tooltip"
+            title="
+           * Business-to-Business allows for easy cooperation without work permits"
+          >
+            all the continents*</b
+          >
+        </p>
+        <p>
+          I have led the development of applications from defining
+          <b>business and user requirements</b> to <b>UX and API design</b>, and
+          finally, to <b>creating efficient and scalable product</b>.
+        </p>
+        <p>
+          I thrive in environments that value open and sincere communication and
+          collaboration with teammates, yet I am equally comfortable working
+          independently.
+        </p>
+        <p>
+          Most of my recent projects have utilized technologies such as
+          TypeScript, React, Next.js, Testing Library, Vitest, Playwright,
+          Vercel, and GitHub Actions. Additionally, I have had the opportunity
+          to work with other technologies like Vanilla JS, Redux, Apollo, Vue,
+          Vuex, Cypress, Svelte, Firebase DB, Storybook, and AngularJS.
+        </p>
+      </section>
+
+      <form
+        action="https://formbold.com/s/60lQj"
+        method="POST"
+        class="contact-info section"
+      >
+        <label>
+          <h2>Say hello</h2>
+          <input type="email" placeholder="Email" name="email" />
+        </label>
+        <textarea
+          name="message"
+          placeholder="What can we do together?"
+        ></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </main>
+  </body>
+</html>
