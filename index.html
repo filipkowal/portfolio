@@ -6,11 +6,12 @@
     <title>Filip Kowal - Software Developer</title>
     <style>
       body {
-        font-family: monospace, sans-serif;
+        font-family: "Geist Sans", monospace, sans-serif;
+        font-weight: 300;
         margin: 0;
         padding: 0;
         background-color: black;
-        color: #fff;
+        color: rgb(161, 161, 170);
       }
       .container {
         max-width: 800px;
@@ -22,7 +23,21 @@
       h1,
       h2,
       h3 {
-        color: #2c3e50;
+        font-weight: 700;
+        color: rgb(250, 250, 250);
+      }
+      b {
+        cursor: pointer;
+        font-weight: 700;
+
+        color: rgb(250, 250, 250);
+        transition-property: color, background-color, border-color,
+          text-decoration-color, fill, stroke;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 0.15s;
+      }
+      b:hover {
+        color: rgb(161, 161, 170);
       }
       p {
         line-height: 1.6;
@@ -34,11 +49,15 @@
       ul li {
         margin: 5px 0;
       }
-      .section {
+      section {
         margin-bottom: 20px;
+        margin-top: 3rem;
       }
       .avatar {
         border-radius: 50%;
+        display: inline-block;
+        height: 100px;
+        width: 100px;
       }
       .tooltip {
         cursor: pointer;
@@ -48,19 +67,56 @@
         flex-direction: column;
         gap: 10px;
       }
+      tag {
+        display: inline-block;
+        font-weight: 500;
+        padding: 5px 10px;
+        background-color: rgb(39, 39, 42);
+        border-radius: 5px;
+        color: #fff;
+        font-size: 0.8em;
+        margin-top: 5px;
+      }
+      .font-light {
+        font-weight: 300;
+      }
+      .ml {
+        margin-left: 5px;
+      }
     </style>
+    <link
+      href="
+    https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5.0.3/700.min.css
+    "
+      rel="stylesheet"
+    />
+    <link
+      href="
+    https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5.0.3/300.min.css
+    "
+      rel="stylesheet"
+    />
+    <link
+      href="
+  https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5.0.3/500.min.css
+  "
+      rel="stylesheet"
+    />
   </head>
   <body>
     <main class="container">
       <header>
         <img src="./avatar.jpeg" alt="Filip Kowal's face" class="avatar" />
-        <h1>Filip Kowal • Software Developer</h1>
+        <h1>
+          Filip Kowal<span class="font-light ml"> Software Developer</span>
+        </h1>
       </header>
       <section>
+        <p>Hi 👋,</p>
         <p>
-          Hi 👋, I'm a front-end web developer passionate about simplifying
-          complex problems. My expertise extends beyond the typical front-end
-          scope, allowing me to innovate and explore new solutions.
+          I'm a front-end web developer passionate about simplifying complex
+          problems. My expertise extends <b>beyond front-end scope</b>, allowing
+          me to innovate and explore new solutions.
         </p>
         <p>
           I am open to cooperation with clients across
@@ -69,7 +125,7 @@
             title="
            * Business-to-Business allows for easy cooperation without work permits"
           >
-            all the continents*</b
+            all the continents 🌎*</b
           >
         </p>
         <p>
@@ -77,55 +133,73 @@
           <b>business and user requirements</b> to <b>UX and API design</b>, and
           finally, to <b>creating efficient and scalable product</b>.
         </p>
+      </section>
+      <section>
         <p>
-          I thrive in environments that value open and sincere communication and
-          collaboration with teammates, yet I am equally comfortable working
-          independently.
+          Most of my recent projects were built with:
+          <tag>TypeScript</tag>
+          <tag>React</tag>
+          <tag>Next.js</tag>
+          <tag>Testing Library</tag>
+          <tag>Vitest</tag>
+          <tag>Playwright</tag>
+          <tag>Vercel</tag>
+          <tag>GitHub Actions</tag>
         </p>
         <p>
-          Most of my recent projects have utilized technologies such as
-          TypeScript, React, Next.js, Testing Library, Vitest, Playwright,
-          Vercel, and GitHub Actions. Additionally, I have had the opportunity
-          to work with other technologies like Vanilla JS, Redux, Apollo, Vue,
-          Vuex, Cypress, Svelte, Firebase DB, Storybook, and AngularJS.
+          I also worked with:
+          <tag>Vanilla JS</tag>
+          <tag>Redux</tag>
+          <tag>Apollo</tag>
+          <tag>Vue</tag>
+          <tag>Vuex</tag>
+          <tag>Cypress</tag>
+          <tag>Svelte</tag>
+          <tag>Firebase DB</tag>
+          <tag>Storybook</tag>
+          <tag>AngularJS</tag>
         </p>
       </section>
       <section class="section">
-        <h1>Example workflow: Jobs App</h1>
+        <h1>Case study <span class="font-light"> Jobs</span></h1>
         <p>
-          The Jobs app allows people to easily search for a job and apply to a
-          selection of them. Additionally, both the behavior and styling of the
-          app are easily customizable so that the client can create various
+          The Jobs app allows people to easily
+          <b>search for a job and apply</b> to a selection of them.
+          Additionally, both the behavior and styling of the app are
+          <b>deeply customizable</b> so that the client can create various
           instances of the app for their partners or market branches.
         </p>
 
         <h3>UX</h3>
         <p>
-          I have helped the client clarify the business needs and create a
-          common, early vision of the product. The design process involved
-          creating user personas, defining the needed features, and mapping out
-          user flows. I prepared a lo-fi mockup and collected stakeholders'
-          feedback to further shape the interface. Afterwards, a hi-fi mockup
-          adhering to the client's brand identity was created.
+          I have helped the client <b>clarify the business needs</b> and create
+          a common, early vision of the product. The design process involved
+          creating
+          <b
+            >user personas, defining the needed features, and mapping out user
+            flows</b
+          >. I prepared a lo-fi mockup and collected stakeholders' feedback to
+          further <b>shape the interface</b>. Afterwards, a hi-fi mockup
+          adhering to the <b>client's brand identity</b> was created.
         </p>
 
         <h3>API Design</h3>
         <p>
           While clarifying the UI, I created an early description of the
           client-server communication. After receiving feedback from the backend
-          developers, I prepared an OpenAPI-compliant specification. Having a
-          single source of truth helped us clearly define cooperation during the
-          entire development process.
+          developers, I prepared an <b>OpenAPI-compliant specification</b>.
+          Having a single source of truth helped us clearly define cooperation
+          during the entire development process.
         </p>
 
         <h3>Development</h3>
         <p>
-          The client required very fast initial loading of the app, as well as
-          ease of finding new developers to maintain the app in the future. I
-          decided to use the popular React.js library with the Next.js frontend
-          framework, utilizing static rendering wherever the initial state did
-          not rely on user input. To keep the app's size small, helper libraries
-          were used sparingly.
+          The client required very <b>fast initial loading of the app</b>, as
+          well as <b>ease of finding new developers</b> to maintain the app in
+          the future. I decided to use the popular React.js library with the
+          Next.js frontend framework, utilizing <b>static rendering</b> wherever
+          the initial state did not rely on user input. To keep the app's size
+          small, <b>helper libraries were used sparingly</b>.
         </p>
       </section>
 
