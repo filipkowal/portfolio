@@ -95,14 +95,16 @@
         action="https://formbold.com/s/60lQj"
         method="POST"
         class="contact-info section"
+        onsubmit="this.reset();"
       >
         <label>
           <h2>Say hello</h2>
-          <input type="email" placeholder="Email" name="email" />
+          <input type="email" placeholder="Email" name="email" required />
         </label>
         <textarea
           name="message"
           placeholder="What can we do together?"
+          required
         ></textarea>
 
         <button type="submit">Send Message</button>
