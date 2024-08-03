@@ -12,6 +12,7 @@
         padding: 0;
         background-color: black;
         color: rgb(161, 161, 170);
+        overflow-x: hidden;
       }
       .container {
         max-width: 800px;
@@ -100,9 +101,41 @@
       }
       .font-light {
         font-weight: 300;
+        color: rgb(161, 161, 170);
       }
       .ml {
         margin-left: 5px;
+      }
+      .data-flow {
+        opacity: 0;
+        position: absolute;
+        top: 5%;
+        left: 50%;
+        z-index: -1;
+        transition: opacity 0.5s ease-in-out;
+      }
+      .data-flow-text:hover ~ .data-flow {
+        opacity: 0.5;
+      }
+      .relative {
+        position: relative;
+      }
+      @media screen and (min-width: 600px) {
+        .workflow-step {
+          display: flex;
+          flex-direction: row;
+          /* overflow: hidden; */
+        }
+        .workflow-step:nth-of-type(2n) {
+          flex-direction: row-reverse;
+        }
+        .workflow-step > div {
+          border-radius: 10px;
+          padding: 2rem;
+          margin: 4rem 0;
+          background: rgba(39, 39, 42, 0.6);
+          width: 50%;
+        }
       }
     </style>
     <link
@@ -144,7 +177,7 @@
           <b
             class="tooltip"
             data-tooltip="
-           B2B relationship allows for easy cooperation without work permit"
+           B2B relationship allows cooperation without a work permit"
           >
             all the continents 🌎*</b
           >
@@ -191,35 +224,56 @@
           instances of the app for their partners or market branches.
         </p>
 
-        <h3>UX</h3>
-        <p>
-          I have helped the client <b>clarify the business needs</b> and create
-          a common, early vision of the product. The design process involved
-          creating <b>user personas</b>, defining the needed <b>features</b>,
-          and mapping out <b>user flows</b>. I prepared a lo-fi mockup and
-          collected stakeholders' feedback to further
-          <b>shape the interface</b>. Afterwards, a hi-fi mockup adhering to the
-          <b>client's brand identity</b> was created.
-        </p>
+        <div class="relative workflow-step">
+          <div>
+            <h3>UX</h3>
+            <p>
+              I have helped the client <b>clarify the business needs</b> and
+              create a common, early vision of the product. The design process
+              involved creating <b>user personas</b>, defining the needed
+              <b>features</b>, and mapping out
+              <b class="data-flow-text">data flow</b>. I prepared a lo-fi mockup
+              and collected stakeholders' feedback to further
+              <b>shape the interface</b>. Afterwards, a hi-fi mockup adhering to
+              the <b>client's brand identity</b> was created.
+              <img
+                src="./data-flow.png"
+                alt="data-flow"
+                width="100%"
+                class="data-flow"
+              />
+            </p>
+          </div>
+        </div>
 
-        <h3>API Design</h3>
-        <p>
-          While clarifying the UI, I created an early description of the
-          client-server communication. After receiving feedback from the backend
-          developers, I prepared an <b>OpenAPI-compliant specification</b>.
-          Having a single source of truth helped us clearly define cooperation
-          during the entire development process.
-        </p>
+        <div class="relative workflow-step">
+          <div>
+            <h3>API Design</h3>
+            <p>
+              While clarifying the UI, I created an early description of the
+              client-server communication. After receiving feedback from the
+              backend developers, I prepared an
+              <b>OpenAPI-compliant specification</b>. Having a single source of
+              truth helped us clearly define cooperation during the entire
+              development process.
+            </p>
+          </div>
+        </div>
 
-        <h3>Development</h3>
-        <p>
-          The client required very <b>fast initial loading of the app</b>, as
-          well as <b>ease of finding new developers</b> to maintain the app in
-          the future. I decided to use the popular React.js library with the
-          Next.js frontend framework, utilizing <b>static rendering</b> wherever
-          the initial state did not rely on user input. To keep the app's size
-          small, <b>helper libraries were used sparingly</b>.
-        </p>
+        <div class="relative workflow-step">
+          <div>
+            <h3>Development</h3>
+            <p>
+              The client required very <b>fast initial loading of the app</b>,
+              as well as <b>ease of finding new developers</b> to maintain the
+              app in the future. I decided to use the popular React.js library
+              with the Next.js frontend framework, utilizing
+              <b>static rendering</b> wherever the initial state did not rely on
+              user input. To keep the app's size small,
+              <b>helper libraries were used sparingly</b>.
+            </p>
+          </div>
+        </div>
       </section>
 
       <form
