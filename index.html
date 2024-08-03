@@ -36,6 +36,8 @@
           text-decoration-color, fill, stroke;
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         transition-duration: 0.15s;
+        word-break: keep-all;
+        display: inline-block;
       }
       b:hover {
         color: rgb(161, 161, 170);
@@ -93,9 +95,9 @@
         display: inline-block;
         font-weight: 500;
         padding: 5px 10px;
-        background-color: rgb(39, 39, 42);
+        background-color: rgba(39, 39, 42, 0.8);
         border-radius: 5px;
-        color: #fff;
+        color: rgba(255, 255, 255, 0.8);
         font-size: 0.8em;
         margin-top: 5px;
       }
@@ -170,9 +172,9 @@
       <section>
         <p>Hi 👋,</p>
         <p>
-          I'm a front-end web developer passionate about simplifying complex
-          problems. My expertise extends <b>beyond front-end scope</b>, allowing
-          me to innovate and explore new solutions.
+          I'm a web developer passionate about simplifying complex problems. My
+          expertise extends <b>beyond front-end scope</b>, allowing me to
+          innovate and explore new solutions.
         </p>
         <p>
           I am open to cooperation with clients across
@@ -220,8 +222,8 @@
         <h1>Case study <span class="font-light"> Jobs</span></h1>
         <p>
           The Jobs app allows people to easily
-          <b>search for a job and apply</b> to a selection of them.
-          Additionally, both the behavior and styling of the app are
+          <b>search for jobs and apply</b> to a selection of them. Additionally,
+          both the behavior and styling of the app are
           <b>deeply customizable</b> so that the client can create various
           instances of the app for their partners or market branches.
         </p>
@@ -232,10 +234,9 @@
             <p>
               I have helped the client <b>clarify the business needs</b> and
               create a common, early vision of the product. The design process
-              involved creating <b>user personas</b>, defining the needed
-              <b>features</b>, and mapping out
-              <b class="data-flow-text">data flow</b>. I prepared a lo-fi mockup
-              and collected stakeholders' feedback to further
+              involved creating user personas, defining the needed features, and
+              mapping out <b class="data-flow-text">data flow</b>. I prepared a
+              lo-fi mockup and collected stakeholders' feedback to further
               <b>shape the interface</b>. Afterwards, a hi-fi mockup adhering to
               the <b>client's brand identity</b> was created.
               <img
@@ -266,13 +267,13 @@
           <div>
             <h3>Development</h3>
             <p>
-              The client required very <b>fast initial loading of the app</b>,
-              as well as <b>ease of finding new developers</b> to maintain the
-              app in the future. I decided to use the popular React.js library
-              with the Next.js frontend framework, utilizing
+              The client required very <b>fast initial loading</b> of the app,
+              as well as ease of finding new developers to maintain the app in
+              the future. I decided to use the popular React.js library with the
+              Next.js frontend framework, utilizing
               <b>static rendering</b> wherever the initial state did not rely on
-              user input. To keep the app's size small,
-              <b>helper libraries were used sparingly</b>.
+              user input. To keep the app <b>lightweight</b>, helper libraries
+              were used sparingly.
             </p>
           </div>
         </div>
