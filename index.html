@@ -73,13 +73,15 @@
         left: 10px;
         font-family: "Geist Sans", monospace, sans-serif;
         z-index: -1;
-        background-color: rgb(39, 39, 42);
-        color: #fff;
-        padding: 10px;
+        background-color: black;
+        border: rgb(39, 39, 42) 1px solid;
+        color: rgba(255, 255, 255, 0.9);
+        padding: 1.5rem;
         border-radius: 5px;
-        font-size: 0.8em;
+        font-size: 0.9em;
         font-weight: 300;
         opacity: 0;
+        min-width: 15rem;
       }
       .tooltip:hover::after {
         z-index: 1;
@@ -122,22 +124,23 @@
       .relative {
         position: relative;
       }
-      .workflow-step > div {
+      .card > div {
         border-radius: 10px;
         padding: 2rem;
         margin: 4rem 0;
-        background: rgba(39, 39, 42, 0.6);
+        background: black;
+        border: rgb(39, 39, 42) 1px solid;
       }
       @media screen and (min-width: 600px) {
-        .workflow-step {
+        .card {
           display: flex;
           flex-direction: row;
           /* overflow: hidden; */
         }
-        .workflow-step:nth-of-type(2n) {
+        .card:nth-of-type(2n) {
           flex-direction: row-reverse;
         }
-        .workflow-step > div {
+        .card > div {
           width: 50%;
         }
       }
@@ -165,10 +168,12 @@
         font-size: 1em;
         font-weight: 500;
         cursor: pointer;
+        box-shadow: 4px 7px 9px -3px rgb(160, 0, 210);
+        transition: all 0.1s ease;
       }
       button:hover {
-        background-color: rgba(39, 39, 42, 0.8);
         color: #fff;
+        box-shadow: 6px 9px 7px -2px rgb(160, 0, 210);
       }
       .wave {
         animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
@@ -244,7 +249,7 @@
           <b
             class="tooltip"
             data-tooltip="
-           B2B relationship allows cooperation without a work permit"
+           B2B relationship allows cooperation without a work permit."
           >
             all the continents 🌎*</b
           >
@@ -291,7 +296,7 @@
           instances of the app for their partners or market branches.
         </p>
 
-        <div class="relative workflow-step">
+        <div class="relative card">
           <div>
             <h3>UX</h3>
             <p>
@@ -312,7 +317,7 @@
           </div>
         </div>
 
-        <div class="relative workflow-step">
+        <div class="relative card">
           <div>
             <h3>API Design</h3>
             <p>
@@ -326,7 +331,7 @@
           </div>
         </div>
 
-        <div class="relative workflow-step">
+        <div class="relative card">
           <div>
             <h3>Development</h3>
             <p>
