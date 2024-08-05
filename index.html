@@ -141,6 +141,35 @@
           width: 50%;
         }
       }
+
+      input,
+      textarea {
+        margin-top: 0.5rem;
+        background-color: transparent;
+        padding: 1rem 2rem;
+        border-radius: 10px;
+        border: rgb(39, 39, 42) 1px solid;
+
+        color: rgb(161, 161, 170);
+        font-family: "Geist Sans", monospace, sans-serif;
+        font-size: 1em;
+      }
+      button {
+        margin-top: 0.5rem;
+        background-color: transparent;
+        padding: 1rem 2rem;
+        border-radius: 10px;
+        border: rgb(39, 39, 42) 1px solid;
+        color: rgb(161, 161, 170);
+        font-family: "Geist Sans", monospace, sans-serif;
+        font-size: 1em;
+        font-weight: 500;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: rgba(39, 39, 42, 0.8);
+        color: #fff;
+      }
     </style>
     <link
       href="
@@ -286,13 +315,14 @@
         onsubmit="this.reset();"
       >
         <label>
-          <h2>Say hello</h2>
+          <h2>Say 👋</h2>
           <input type="email" placeholder="Email" name="email" required />
         </label>
         <textarea
           name="message"
           placeholder="What can we do together?"
           required
+          rows="7"
         ></textarea>
 
         <button type="submit">Send Message</button>
