@@ -209,6 +209,22 @@
           transform: rotate(0deg);
         }
       }
+
+      @keyframes glow {
+        0% {
+          text-shadow: 1px 1px 9px darkviolet, 1px 1px 11px darkviolet,
+            1px 1px 9px darkviolet, 0 0 10px darkviolet, 0 0 10px darkviolet;
+        }
+        100% {
+          text-shadow: 1px 1px 8px darkviolet, 1px 1px 11px darkviolet,
+            4px 6px 8px darkviolet, 0 0 10px blueviolet, 0 0 10px blueviolet;
+          color: antiquewhite;
+        }
+      }
+
+      .glowing {
+        animation: glow 1.5s infinite alternate;
+      }
     </style>
     <link
       href="
@@ -228,6 +244,50 @@
   "
       rel="stylesheet"
     />
+    <script>
+      document.addEventListener("scroll", () => {
+        const cards = document.querySelectorAll(".card");
+        let glowingText = null;
+        const windowCenter = window.innerHeight / 2;
+
+        cards.forEach((card) => {
+          const rect = card.getBoundingClientRect();
+
+          // Find the card that's in the viewport's center
+          if (rect.top <= windowCenter && rect.bottom >= windowCenter) {
+            const boldTexts = card.querySelectorAll("b");
+            const numOfBoldTexts = boldTexts.length;
+            const dividedHeight = rect.height / numOfBoldTexts;
+
+            let heights = [];
+            for (let i = 0; i < numOfBoldTexts; i++) {
+              const top = rect.top + dividedHeight * i;
+              heights.push(top);
+            }
+
+            // Find the bold text that is in the viewport's center
+            heights.forEach((height, index) => {
+              if (
+                windowCenter >= height &&
+                windowCenter < height + dividedHeight
+              ) {
+                glowingText = boldTexts[index];
+              }
+            });
+          }
+        });
+
+        // Remove the glow effect from all bold texts
+        document
+          .querySelectorAll(".card b")
+          .forEach((b) => b.classList.remove("glowing"));
+
+        // Add the glow effect to the currently visible bold text
+        if (glowingText) {
+          glowingText.classList.add("glowing");
+        }
+      });
+    </script>
   </head>
   <body>
     <main class="container">
@@ -300,13 +360,18 @@
           <div>
             <h3>UX</h3>
             <p>
-              I have helped the client <b>clarify the business needs</b> and
-              create a common, early vision of the product. The design process
-              involved creating user personas, defining the needed features, and
-              mapping out <b class="data-flow-text">data flow</b>. I prepared a
-              lo-fi mockup and collected stakeholders' feedback to further
-              <b>shape the interface</b>. Afterwards, a hi-fi mockup adhering to
-              the <b>client's brand identity</b> was created.
+              I have helped the client clarify the business needs and create a
+              common, early vision of the product. The design process involved
+              creating user personas, defining the needed features, and mapping
+              out <b class="data-flow-text">data flow</b>.
+            </p>
+            <p>
+              I prepared a lo-fi mockup and collected stakeholders' feedback to
+              further <b>shape the interface</b>.
+            </p>
+            <p>
+              Afterwards, a hi-fi mockup adhering to the
+              <b>client's brand identity</b> was created.
               <img
                 src="./data-flow.png"
                 alt="data-flow"
@@ -337,11 +402,16 @@
             <p>
               The client required very <b>fast initial loading</b> of the app,
               as well as ease of finding new developers to maintain the app in
-              the future. I decided to use the popular React.js library with the
-              Next.js frontend framework, utilizing
-              <b>static rendering</b> wherever the initial state did not rely on
-              user input. To keep the app <b>lightweight</b>, helper libraries
-              were used sparingly.
+              the future.
+            </p>
+            <p>
+              I decided to use the popular React.js library with the Next.js
+              frontend framework, utilizing <b>static rendering</b> wherever the
+              initial state did not rely on user input.
+            </p>
+            <p>
+              To keep the app <b>lightweight</b>, helper libraries were used
+              sparingly.
             </p>
           </div>
         </div>
