@@ -112,10 +112,10 @@
       .highlight-image {
         opacity: 0;
         position: absolute;
-        top: 5%;
+        top: 10%;
         left: 30%;
         z-index: -1;
-        max-height: 100%;
+        max-height: 80%;
         transition: opacity 0.5s ease-in-out;
       }
       .highlight-image.left {
@@ -145,6 +145,7 @@
         }
         .card > div {
           width: 50%;
+          margin: 8rem 0;
         }
       }
 
@@ -227,6 +228,36 @@
 
       .glowing {
         animation: glow 1.5s infinite alternate;
+      }
+
+      .pagespeed-card {
+        width: 250px !important;
+        border: none !important;
+        padding: 20px;
+        position: absolute;
+        z-index: -1;
+        top: 10%;
+        left: 55%;
+        opacity: 1;
+      }
+
+      .metric {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        margin-bottom: 12px;
+        padding: 8px 0;
+      }
+
+      .metric-name {
+        font-weight: 500;
+        color: rgb(161, 161, 170);
+      }
+
+      .metric-value {
+        font-weight: 700;
+        color: white;
+        font-size: 2em;
       }
     </style>
     <link
@@ -412,27 +443,30 @@
               The client required very <b>fast initial loading</b> of the app,
               as well as ease of finding new developers to maintain the app in
               the future.
-              <img
-                class="highlight-image"
-                style="background-color: rgb(0, 255, 119)"
-              />
             </p>
             <p>
               I decided to use the popular React.js library with the Next.js
-              frontend framework, utilizing <b>static rendering</b> wherever the
-              initial state did not rely on user input.
-              <img
-                class="highlight-image"
-                style="background-color: rgb(255, 191, 0)"
-              />
+              frontend framework, utilizing
+              <b>static rendering and server components</b> wherever the initial
+              state did not rely on user input.
             </p>
             <p>
-              To keep the app <b>lightweight</b>, helper libraries were used
+              To keep the app lightweight, helper libraries were used
               sparingly.<img
                 class="highlight-image"
                 style="background-color: rgb(255, 0, 119)"
               />
             </p>
+          </div>
+          <div class="pagespeed-card">
+            <div class="metric">
+              <span class="metric-name">First Contentful Paint</span>
+              <span class="metric-value">0.3 s</span>
+            </div>
+            <div class="metric">
+              <span class="metric-name">Largest Contentful Paint</span>
+              <span class="metric-value">0.4 s</span>
+            </div>
           </div>
         </div>
       </section>
