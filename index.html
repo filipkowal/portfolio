@@ -245,6 +245,12 @@
         align-items: end;
         margin-bottom: 12px;
         padding: 8px 0;
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+      }
+
+      .metric-visible {
+        opacity: 1;
       }
 
       .metric-name {
@@ -277,12 +283,21 @@
       rel="stylesheet"
     />
     <script>
+      let pagespeedCard;
+      let cards;
+      let metrics;
+
+      window.addEventListener("DOMContentLoaded", () => {
+        cards = document.querySelectorAll(".card");
+        pagespeedCard = document.querySelector(".pagespeed-card");
+        metrics = pagespeedCard.querySelectorAll(".metric");
+      });
+
       document.addEventListener("scroll", () => {
-        const cards = document.querySelectorAll(".card");
         let glowingText = null;
         const windowCenter = window.innerHeight / 2;
 
-        cards.forEach((card) => {
+        cards.forEach((card, cardIndex) => {
           const rect = card.getBoundingClientRect();
 
           // Find the card that's in the viewport's center
@@ -304,15 +319,23 @@
                 windowCenter < height + dividedHeight
               ) {
                 glowingText = boldTexts[index];
+
+                if (cardIndex === cards.length - 1) {
+                  metrics[index].classList.add("metric-visible");
+                }
               }
             });
           }
         });
 
         // Remove the glow effect from all bold texts
-        document
-          .querySelectorAll(".card b")
-          .forEach((b) => b.classList.remove("glowing"));
+        cards.forEach((card) =>
+          card
+            .querySelectorAll(".card b")
+            .forEach((b) => b.classList.remove("glowing"))
+        );
+        // Remove metrics
+        // metrics.forEach((metric) => metric.classList.remove("metric-visible"));
 
         // Add the glow effect to the currently visible bold text
         if (glowingText) {
