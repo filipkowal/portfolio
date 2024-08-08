@@ -93,7 +93,7 @@ boldTexts.forEach((b, index) => {
   // show glow on text mouseleave
   b.addEventListener("mouseleave", () => {
     glowingCursor.style.transform = "scale(1)";
-    b.classList.remove("glowing");
+    // b.classList.remove("glowing");
   });
 });
 
