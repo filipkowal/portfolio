@@ -128,6 +128,7 @@
         position: relative;
       }
       .card > .content {
+        cursor: default;
         border-radius: 10px;
         padding: 2rem;
         margin: 4rem 0;
@@ -230,6 +231,18 @@
         animation: glow 1.5s infinite alternate;
       }
 
+      .glowing-cursor {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        border-radius: 50%;
+        pointer-events: none;
+        background: rgba(238, 130, 238, 0.7); /* Violet glow color */
+        box-shadow: 0 0 25px 15px violet;
+        transform: scale(0); /* Start hidden */
+        transition: transform 0.1s ease-out;
+      }
+
       .pagespeed-card {
         padding: 2rem;
         position: absolute;
@@ -282,67 +295,7 @@
   "
       rel="stylesheet"
     />
-    <script>
-      let pagespeedCard;
-      let cards;
-      let metrics;
-
-      window.addEventListener("DOMContentLoaded", () => {
-        cards = document.querySelectorAll(".card");
-        pagespeedCard = document.querySelector(".pagespeed-card");
-        metrics = pagespeedCard.querySelectorAll(".metric");
-      });
-
-      document.addEventListener("scroll", () => {
-        let glowingText = null;
-        const windowCenter = window.innerHeight / 2;
-
-        cards.forEach((card, cardIndex) => {
-          const rect = card.getBoundingClientRect();
-
-          // Find the card that's in the viewport's center
-          if (rect.top <= windowCenter && rect.bottom >= windowCenter) {
-            const boldTexts = card.querySelectorAll("b");
-            const numOfBoldTexts = boldTexts.length;
-            const dividedHeight = rect.height / numOfBoldTexts;
-
-            let heights = [];
-            for (let i = 0; i < numOfBoldTexts; i++) {
-              const top = rect.top + dividedHeight * i;
-              heights.push(top);
-            }
-
-            // Find the bold text that is in the viewport's center
-            heights.forEach((height, index) => {
-              if (
-                windowCenter >= height &&
-                windowCenter < height + dividedHeight
-              ) {
-                glowingText = boldTexts[index];
-
-                if (cardIndex === cards.length - 1) {
-                  metrics[index].classList.add("metric-visible");
-                }
-              }
-            });
-          }
-        });
-
-        // Remove the glow effect from all bold texts
-        cards.forEach((card) =>
-          card
-            .querySelectorAll(".card b")
-            .forEach((b) => b.classList.remove("glowing"))
-        );
-        // Remove metrics
-        // metrics.forEach((metric) => metric.classList.remove("metric-visible"));
-
-        // Add the glow effect to the currently visible bold text
-        if (glowingText) {
-          glowingText.classList.add("glowing");
-        }
-      });
-    </script>
+    <script type="module" src="./index.js" defer></script>
   </head>
   <body>
     <main class="container">
