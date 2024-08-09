@@ -259,6 +259,15 @@
         opacity: 1;
       }
 
+      @media screen and (max-width: 600px) {
+        .pagespeed-card {
+          display: none;
+        }
+        .glowing {
+          animation: none;
+        }
+      }
+
       .metric {
         display: flex;
         flex-direction: column;
@@ -285,7 +294,7 @@
       }
       .github {
         display: inline-block;
-        margin-left: 0.7rem;
+        margin-left: 0.5rem;
       }
 
       .globe::after {
@@ -293,7 +302,7 @@
         display: inline-block;
       }
       .tooltip:hover > .globe::after {
-        animation: rotateGlobe 2s infinite;
+        animation: rotateGlobe 1s infinite;
       }
 
       @keyframes rotateGlobe {
