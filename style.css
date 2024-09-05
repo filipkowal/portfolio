@@ -1,0 +1,315 @@
+body {
+  font-family: "Geist Sans", monospace, sans-serif;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: rgb(161, 161, 170);
+  overflow-x: hidden;
+}
+.container {
+  max-width: 800px;
+  margin: 20vh auto;
+  padding: 20px;
+  background-color: #0e0e0e05;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  color: rgb(250, 250, 250);
+}
+b {
+  font-weight: 700;
+  color: rgb(250, 250, 250);
+  word-break: keep-all;
+  display: inline-block;
+}
+p {
+  line-height: 1.6;
+}
+a {
+  color: rgb(161, 161, 170);
+}
+a:hover {
+  color: white;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+ul li {
+  margin: 5px 0;
+}
+section {
+  margin-bottom: 20px;
+  margin-top: 3rem;
+  overflow-x: hidden;
+}
+.avatar {
+  border-radius: 50%;
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  filter: brightness(94%) contrast(145%) saturate(71%);
+}
+.tooltip {
+  cursor: pointer;
+  position: relative;
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.15s;
+}
+.tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 1.5rem;
+  left: 10px;
+  font-family: "Geist Sans", monospace, sans-serif;
+  z-index: -1;
+  background-color: black;
+  border: rgb(39, 39, 42) 1px solid;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 1.5rem;
+  border-radius: 5px;
+  font-size: 0.9em;
+  font-weight: 300;
+  opacity: 0;
+  min-width: 15rem;
+}
+.tooltip:hover {
+  color: rgb(161, 161, 170);
+}
+.tooltip:hover::after {
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+tag {
+  display: inline-block;
+  font-weight: 500;
+  padding: 5px 10px;
+  background-color: rgba(39, 39, 42, 0.8);
+  border-radius: 5px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.8em;
+  margin-top: 5px;
+}
+.font-light {
+  font-weight: 300;
+  color: rgb(161, 161, 170);
+}
+.ml {
+  margin-left: 5px;
+}
+.highlight-image {
+  opacity: 0;
+  position: absolute;
+  top: 10%;
+  left: 30%;
+  z-index: -1;
+  max-height: 80%;
+  transition: opacity 0.5s ease-in-out;
+}
+.highlight-image.left {
+  left: 0;
+}
+.glowing ~ .highlight-image {
+  opacity: 1;
+}
+.relative {
+  position: relative;
+}
+.card > .content {
+  cursor: default;
+  border-radius: 10px;
+  padding: 2rem;
+  margin: 4rem 0;
+  background: black;
+  border: rgb(39, 39, 42) 1px solid;
+}
+@media screen and (min-width: 600px) {
+  .card {
+    display: flex;
+    flex-direction: row;
+    /* overflow: hidden; */
+  }
+  .card:nth-of-type(2n) {
+    flex-direction: row-reverse;
+  }
+  .card > .content {
+    width: 50%;
+    margin: 8rem 0;
+  }
+}
+
+input,
+textarea {
+  margin-top: 0.5rem;
+  background-color: transparent;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  border: rgb(39, 39, 42) 1px solid;
+
+  color: rgb(161, 161, 170);
+  font-family: "Geist Sans", monospace, sans-serif;
+  font-size: 1em;
+}
+button {
+  margin-top: 0.5rem;
+  background-color: transparent;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  border: rgb(39, 39, 42) 1px solid;
+  color: rgb(161, 161, 170);
+  font-family: "Geist Sans", monospace, sans-serif;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 4px 7px 9px -3px rgb(160, 0, 210);
+  transition: all 0.1s ease;
+}
+button:hover {
+  color: #fff;
+  box-shadow: 6px 9px 7px -2px rgb(160, 0, 210);
+}
+.wave {
+  animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.5s; /* Change to speed up or slow down */
+  animation-iteration-count: infinite; /* Never stop waving :) */
+  transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  } /* The following five values can be played with to make the waving more or less extreme */
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  } /* Reset for the last half to pause */
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 1px 1px 9px darkviolet, 1px 1px 11px darkviolet,
+      1px 1px 9px darkviolet, 0 0 10px darkviolet, 0 0 10px darkviolet;
+  }
+  100% {
+    text-shadow: 1px 1px 8px darkviolet, 1px 1px 11px darkviolet,
+      4px 6px 8px darkviolet, 0 0 10px blueviolet, 0 0 10px blueviolet;
+    color: antiquewhite;
+  }
+}
+
+.glowing {
+  animation: glow 1.5s infinite alternate;
+}
+
+.glowing-cursor {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: rgba(238, 130, 238, 0.7); /* Violet glow color */
+  box-shadow: 0 0 15px 7px violet, 0 0 15px 7px blueviolet, 0 0 25px 7px yellow;
+  transform: scale(0); /* Start hidden */
+  transition: transform 0.1s ease-out;
+}
+
+.pagespeed-card {
+  padding: 2rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  opacity: 1;
+}
+
+@media screen and (max-width: 600px) {
+  .pagespeed-card {
+    display: none;
+  }
+  .glowing {
+    animation: none;
+  }
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  margin-bottom: 12px;
+  padding: 8px 0;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.metric-visible {
+  opacity: 1;
+}
+
+.metric-name {
+  font-weight: 500;
+  color: rgb(161, 161, 170);
+}
+
+.metric-value {
+  font-weight: 700;
+  color: white;
+  font-size: 2em;
+}
+.github {
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+
+.globe::after {
+  content: "🌎";
+  display: inline-block;
+}
+.tooltip:hover > .globe::after {
+  animation: rotateGlobe 1s infinite;
+}
+
+@keyframes rotateGlobe {
+  0% {
+    content: "🌎";
+  }
+  33% {
+    content: "🌏";
+  }
+  66% {
+    content: "🌍";
+  }
+  100% {
+    content: "🌎";
+  }
+}
