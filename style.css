@@ -174,12 +174,11 @@ button {
   font-size: 1em;
   font-weight: 500;
   cursor: pointer;
-  box-shadow: 4px 7px 9px -3px rgb(160, 0, 210);
   transition: all 0.1s ease;
 }
 button:hover {
   color: #fff;
-  box-shadow: 6px 9px 7px -2px rgb(160, 0, 210);
+  border-color: rgb(45, 45, 48);
 }
 .wave {
   animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
